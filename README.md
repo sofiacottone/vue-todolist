@@ -10,4 +10,4 @@ Try it at: https://sofiacottone.github.io/vue-todolist/index.html
 
 ---
 
-![alt text](<Screenshot 2024-04-02 alle 22.58.41.png>)
+![!\[!\\[alt text\\](img/preview.png)\]](img/preview.png)
