@@ -33,7 +33,8 @@
             </div>
         </header>
         <main>
-            <div id="input-container" class="d-flex justify-content-between align-items-center gap-2 mx-auto w-50">
+            <div id="input-container"
+                class="d-flex justify-content-between align-items-center gap-2 mx-auto col-10 col-md-8">
                 <div class="form-floating flex-grow-1 my-3">
                     <input type="text" class="form-control" id="user-input" placeholder="Add new task">
                     <label for="user-input">Aggiungi nuova task</label>
@@ -41,12 +42,12 @@
                 <button type="button" class="btn btn-secondary h-100">Aggiungi</button>
             </div>
 
-            <div class="bg-body-secondary mx-auto my-5 w-50 rounded">
+            <div class="bg-body-secondary mx-auto my-5 col-10 col-md-8 rounded">
                 <!-- single task  -->
-                <div v-for="singleTask in tasks"
+                <div v-for="(singleTask, index) in tasks"
                     class="d-flex justify-content-between align-items-center border-bottom rounded px-4 py-2">
-                    <span>{{ singleTask.taskName }}</span>
-                    <span role="button"><i class="fa-solid fa-xmark"></i></span>
+                    <span :class="{ 'text-decoration-line-through': isDone }">{{ singleTask.taskName }}</span>
+                    <span role="button" @click="removeTask(index)"><i class="fa-solid fa-xmark"></i></span>
                 </div>
             </div>
 
