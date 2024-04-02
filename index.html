@@ -37,7 +37,7 @@
                 class="d-flex justify-content-between align-items-center gap-2 mx-auto col-10 col-md-8">
                 <div class="form-floating flex-grow-1 my-3">
                     <input type="text" class="form-control" id="user-input" v-model.trim="userInput"
-                        placeholder="Add new task">
+                        @keyup.enter="addNewTask()" placeholder="Add new task">
                     <label for="user-input">Aggiungi nuova task</label>
                 </div>
                 <button type="button" @click="addNewTask()" class="btn btn-secondary h-100">Aggiungi</button>
@@ -47,7 +47,8 @@
                 <!-- single task  -->
                 <div v-for="(singleTask, index) in tasks"
                     class="d-flex justify-content-between align-items-center border-bottom rounded px-4 py-2">
-                    <span :class="{ 'text-decoration-line-through': singleTask.done }">{{ singleTask.taskName
+                    <span :class="{ 'text-decoration-line-through': singleTask.done }"
+                        @click="singleTask.done = !singleTask.done">{{ singleTask.taskName
                         }}</span>
                     <span role="button" @click="removeTask(index)"><i class="fa-solid fa-xmark"></i></span>
                 </div>
