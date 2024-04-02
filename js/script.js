@@ -37,11 +37,16 @@ createApp({
                     done: false
                 },
             ],
+            userInput: ''
         }
     },
     methods: {
         removeTask(indexToRemove) {
             this.tasks.splice(indexToRemove, 1)
+        },
+        addNewTask() {
+            this.tasks.unshift({ taskName: this.userInput, done: false });
+            this.userInput = '';
         }
     },
     mounted() {
