@@ -46,7 +46,8 @@
                 <!-- single task  -->
                 <div v-for="(singleTask, index) in tasks"
                     class="d-flex justify-content-between align-items-center border-bottom rounded px-4 py-2">
-                    <span :class="{ 'text-decoration-line-through': tasks.status }">{{ singleTask.taskName }}</span>
+                    <span :class="{ 'text-decoration-line-through': singleTask.done }">{{ singleTask.taskName
+                        }}</span>
                     <span role="button" @click="removeTask(index)"><i class="fa-solid fa-xmark"></i></span>
                 </div>
             </div>

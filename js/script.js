@@ -22,7 +22,7 @@ createApp({
             tasks: [
                 {
                     taskName: 'Fai un salto',
-                    done: false
+                    done: true
                 },
                 {
                     taskName: 'Fanne un altro',
