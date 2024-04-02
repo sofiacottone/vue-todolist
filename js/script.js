@@ -37,7 +37,8 @@ createApp({
                     done: false
                 },
             ],
-            userInput: ''
+            userInput: '',
+            isInvalid: false
         }
     },
     methods: {
@@ -45,11 +46,15 @@ createApp({
             this.tasks.splice(indexToRemove, 1)
         },
         addNewTask() {
-            this.tasks.unshift({ taskName: this.userInput, done: false });
-            this.userInput = '';
+            if (this.userInput.length >= 2) {
+                this.tasks.unshift({ taskName: this.userInput, done: false });
+                this.userInput = '';
+                this.isInvalid = false;
+            } else {
+                this.isInvalid = true;
+            }
         }
     },
     mounted() {
-        console.log(this.tasks)
     }
 }).mount('#app');

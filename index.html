@@ -33,24 +33,28 @@
             </div>
         </header>
         <main>
+            <!-- input + button container  -->
             <div id="input-container"
                 class="d-flex justify-content-between align-items-center gap-2 mx-auto col-10 col-md-8">
                 <div class="form-floating flex-grow-1 my-3">
-                    <input type="text" class="form-control" id="user-input" v-model.trim="userInput"
-                        @keyup.enter="addNewTask()" placeholder="Add new task">
+                    <input type="text" class="form-control" :class="{ 'is-invalid': isInvalid }" id="user-input"
+                        v-model.trim="userInput" @keyup.enter="addNewTask()" placeholder="Add new task">
                     <label for="user-input">Aggiungi nuova task</label>
                 </div>
                 <button type="button" @click="addNewTask()" class="btn btn-secondary h-100">Aggiungi</button>
+            </div>
+            <!-- text in case of error  -->
+            <div v-if="isInvalid" class="text-danger m-auto col-10 col-md-8 mt-1 ps-1">Inserisci almeno 2 caratteri
             </div>
 
             <div class="bg-body-secondary mx-auto my-5 col-10 col-md-8 rounded">
                 <!-- single task  -->
                 <div v-for="(singleTask, index) in tasks"
-                    class="d-flex justify-content-between align-items-center border-bottom rounded px-4 py-2">
+                    class="ms-task d-flex justify-content-between align-items-center border-bottom rounded px-4 py-2">
                     <span :class="{ 'text-decoration-line-through': singleTask.done }"
-                        @click="singleTask.done = !singleTask.done">{{ singleTask.taskName
+                        @click="singleTask.done = !singleTask.done" role="button">{{ singleTask.taskName
                         }}</span>
-                    <span role="button" @click="removeTask(index)"><i class="fa-solid fa-xmark"></i></span>
+                    <span role="button" @click="removeTask(index)"><i class="fa-solid fa-trash"></i></i></span>
                 </div>
             </div>
 

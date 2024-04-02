@@ -6,3 +6,7 @@
 #input-container {
     height: 60px;
 }
+
+.ms-task:hover {
+    background-color: #ffffff40;
+}
