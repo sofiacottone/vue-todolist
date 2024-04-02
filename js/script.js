@@ -22,22 +22,21 @@ createApp({
             tasks: [
                 {
                     taskName: 'Fai un salto',
-                    status: false
+                    done: false
                 },
                 {
                     taskName: 'Fanne un altro',
-                    status: false
+                    done: false
                 },
                 {
                     taskName: 'Fai la giravolta',
-                    status: false
+                    done: false
                 },
                 {
                     taskName: 'Falla un\'altra volta',
-                    status: false
+                    done: false
                 },
             ],
-            isDone: false
         }
     },
     methods: {
