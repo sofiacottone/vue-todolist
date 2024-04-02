@@ -43,8 +43,9 @@
 
             <div class="bg-body-secondary mx-auto my-5 w-50 rounded">
                 <!-- single task  -->
-                <div class="d-flex justify-content-between align-items-center border-bottom rounded px-4 py-2">
-                    <span>[Cosa da fare]</span>
+                <div v-for="singleTask in tasks"
+                    class="d-flex justify-content-between align-items-center border-bottom rounded px-4 py-2">
+                    <span>{{ singleTask.taskName }}</span>
                     <span role="button"><i class="fa-solid fa-xmark"></i></span>
                 </div>
             </div>
