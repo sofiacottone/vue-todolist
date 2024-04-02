@@ -36,10 +36,14 @@ createApp({
                     taskName: 'Falla un\'altra volta',
                     status: false
                 },
-            ]
+            ],
+            isDone: false
         }
     },
     methods: {
+        removeTask(indexToRemove) {
+            this.tasks.splice(indexToRemove, 1)
+        }
     },
     mounted() {
         console.log(this.tasks)
